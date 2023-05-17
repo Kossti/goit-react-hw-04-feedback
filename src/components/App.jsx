@@ -16,12 +16,13 @@ export default function App() {
   };
 
   const countPositiveFeedbackPercentage = () => {
-    return ((good / countTotalFeedback()) * 100).toFixed();
+    if (!countTotalFeedback()) {
+      return 0;
+    }
+    return Math.round((good / countTotalFeedback()) * 100);
   };
 
   const onLeaveFeedback = event => {
-    event.preventDefault();
-
     const name = event.target.name;
 
     switch (name) {
