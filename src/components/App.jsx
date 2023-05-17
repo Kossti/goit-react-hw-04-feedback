@@ -22,9 +22,9 @@ export default function App() {
   const onLeaveFeedback = event => {
     event.preventDefault();
 
-    const key = event.target.name;
+    const name = event.target.name;
 
-    switch (key) {
+    switch (name) {
       case 'good':
         setGood(good + 1);
         break;
